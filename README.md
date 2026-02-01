@@ -4,6 +4,8 @@
 
 ## 安裝
 
+使用 `skills` CLI 安裝：
+
 ```
 npx skills add ycs77/skills
 ```
