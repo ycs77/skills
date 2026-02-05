@@ -13,7 +13,7 @@ Generate concise, descriptive Git commit messages in English.
 1. Run `git diff --cached` to check for staged changes
 2. If staged changes exist: generate commit message based on staged changes only
 3. If no staged changes: run `git diff` and `git status` to view unstaged and untracked files
-4. For untracked files, read their contents
+4. For untracked files, intelligently assess which need content review (code/config files) vs which can be inferred from filename (assets, dependencies)
 5. Generate a single-line commit message (output ONLY the message, no follow-up questions)
 
 ## Format
@@ -32,6 +32,14 @@ Generate concise, descriptive Git commit messages in English.
   - **Test**: Add or update tests
   - **Chore**: Maintenance tasks (deps, config, CI)
 
+## Handling Complex Changes
+
+When multiple types of changes exist in a single commit:
+- Choose the type that represents the **primary intent** of the change
+- Priority order (when uncertain): Add > Fix > Update > Refactor > Chore
+- If truly mixed and unrelated, suggest the user split into separate commits
+- Describe the most significant change; omit minor ancillary modifications
+
 ## Examples
 
 ```
@@ -46,4 +54,6 @@ Refactor user service to use repository pattern
 Document API endpoints in README
 Test payment processing edge cases
 Chore: upgrade dependencies to latest versions
+Add login page with validation and error handling
+Fix authentication bug and update related tests
 ```
