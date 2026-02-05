@@ -1,7 +1,6 @@
 ---
 name: commit-message
 description: Generate concise Git commit messages in imperative mood. Analyzes staged changes first; if none, examines unstaged and untracked files. Use when the user asks to create, write, or generate a commit message.
-argument-hint: [optional changes summary]
 allowed-tools: Bash(git status:*), Bash(git diff:*)
 ---
 
