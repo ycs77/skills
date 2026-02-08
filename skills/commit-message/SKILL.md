@@ -7,7 +7,7 @@ metadata:
   version: "2026.02.08"
 ---
 
-# Commit Message Generator
+# Git Commit Message Generator
 
 Generate concise, descriptive Git commit messages in English.
 
