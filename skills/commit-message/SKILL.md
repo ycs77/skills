@@ -10,6 +10,8 @@ Generate concise, descriptive Git commit messages in English.
 
 ## Process
 
+> Never use `git -C <path>`. Always run git commands directly in the current working directory.
+
 1. Run `git diff --cached` to check for staged changes
 2. If staged changes exist: generate commit message based on staged changes only
 3. If no staged changes: run `git diff` and `git status` to view unstaged and untracked files
