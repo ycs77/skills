@@ -1,25 +1,27 @@
-# Lucas 常用的 Agent Skills
+# Lucas Yang's Skills
 
-這裡是我常用的 Skills 倉庫，可能會有各種不同類型的 Skill。
+[Agent skills](https://agentskills.io/) built around [Lucas Yang](https://github.com/ycs77)'s personal preferences and development style.
 
-## 安裝
+## Installation
 
-使用 `skills` CLI 安裝：
+Install using the `skills` CLI with the all skills:
 
+```bash
+npx skills add ycs77/skills --skill='*'
+# Or to install all skills globally:
+npx skills add ycs77/skills --skill='*' -g
 ```
-npx skills add ycs77/skills
-```
 
-## Skill 列表
+## Skills
 
 | Name | Description |
 |------|-------------|
-| [commit-message](./skills/commit-message/SKILL.md) | 生成簡潔的 Git commit message |
+| [commit-message](./skills/commit-message/SKILL.md) | Generate concise Git commit messages |
 
-## 作者
+## Author
 
 Lucas Yang (yangchenshin77@gmail.com)
 
-## 授權
+## License
 
 [MIT License](LICENSE.md)
