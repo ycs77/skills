@@ -23,7 +23,16 @@ npx skills add ycs77/skills --skill='*' -g
 
 ### Vue Projects
 
-To ensure your AI assistant loads the correct skills when working with Vue 3 Single File Components, add the following to `AGENTS.md` (or `CLAUDE.md`) in your project root:
+First, install the required skills:
+
+```bash
+npx skills add antfu/skills \
+  --skill vue \
+  --skill vue-best-practices \
+  --skill nuxt  # For Nuxt projects
+```
+
+Then, to ensure your AI assistant loads the correct skills when working with Vue 3 Single File Components, add the following to `AGENTS.md` (or `CLAUDE.md`) in your project root:
 
 **For Vue 3 frontend projects:**
 
