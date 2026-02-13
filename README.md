@@ -46,8 +46,6 @@ npx skills add antfu/skills \
 
 Then add the following to `AGENTS.md` (or `CLAUDE.md`) in your project root to ensure the AI assistant loads the correct skills when working with Vue 3 SFCs:
 
-**For Vue 3 frontend projects:**
-
 ```md
 ## Skills Activation Rules
 
@@ -59,23 +57,7 @@ Then add the following to `AGENTS.md` (or `CLAUDE.md`) in your project root to e
   3. `ycs77-vue`
 ```
 
-**For Nuxt projects:**
-
-```md
-## Skills Activation Rules
-
-`ycs77-vue` is the project-level convention. When rules conflict, `ycs77-vue` takes precedence.
-
-- **When writing, modifying, or reviewing Vue 3 SFCs**, load ALL of the following skills:
-  1. `vue`
-  2. `vue-best-practices`
-  3. `ycs77-vue`
-  4. `nuxt`
-
-- **When working on Nuxt-specific files** (server routes, middleware, plugins, composables, `nuxt.config.ts`), load:
-  1. `ycs77-vue`
-  2. `nuxt`
-```
+> For Nuxt projects, also include `nuxt` in the list above.
 
 ## Generate Skills
 
