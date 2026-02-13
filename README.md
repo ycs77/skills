@@ -14,10 +14,22 @@ npx skills add ycs77/skills --skill='*' -g
 
 ## Skills
 
+### Self-maintained Skills
+
 | Name | Description |
 |------|-------------|
 | [commit-message](./skills/commit-message/SKILL.md) | Generate concise Git commit messages |
 | [ycs77-vue](./skills/ycs77-vue/SKILL.md) | Lucas Yang's Vue 3 conventions |
+
+### Skills Generated from Official Documentation
+
+> Unopinionated but with tilted focus (e.g. TypeScript, ESM, Composition API, and other modern stacks)
+
+Generated from official documentation and fine-tuned by Lucas.
+
+| Skill | Description | Source |
+|-------|-------------|--------|
+| [shadcn-vue](skills/shadcn-vue) | Vue port of shadcn-ui - customizable beautifully designed components | [unovue/shadcn-vue](https://github.com/unovue/shadcn-vue) |
 
 ## Usage
 
@@ -64,6 +76,22 @@ Then add the following to `AGENTS.md` (or `CLAUDE.md`) in your project root to e
   1. `ycs77-vue`
   2. `nuxt`
 ```
+
+## Generate Skills
+
+1. Clone this repository
+2. Install dependencies: `pnpm install`
+3. Update `meta.ts` with your own projects and skill sources
+4. Run `pnpm start cleanup` to remove existing submodules and skills
+5. Run `pnpm start init` to clone the submodules
+6. Run `pnpm start sync` to sync vendored skills
+7. Ask your agent to `Generate skills for <project>` (recommended one at a time to manage token usage)
+
+See [AGENTS.md](AGENTS.md) for detailed generation guidelines.
+
+## Credits
+
+- The Skills Generator and CLI are adapted from [antfu/skills](https://github.com/antfu/skills) — thanks [Anthony Fu](https://github.com/antfu)
 
 ## Author
 

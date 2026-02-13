@@ -3,7 +3,6 @@
 Thumbs.db
 
 # Editor files
-.vscode/
 .idea/
 *.swp
 *.swo
@@ -14,3 +13,6 @@ node_modules/
 
 # Logs
 *.log
+
+# Eslint cache
+.eslintcache

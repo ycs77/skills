@@ -1,0 +1,3 @@
+[submodule "sources/shadcn-vue"]
+	path = sources/shadcn-vue
+	url = https://github.com/unovue/shadcn-vue
