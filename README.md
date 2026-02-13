@@ -29,7 +29,7 @@ Generated from official documentation and fine-tuned by Lucas.
 
 | Skill | Description | Source |
 |-------|-------------|--------|
-| [shadcn-vue](skills/shadcn-vue) | Vue port of shadcn-ui - customizable beautifully designed components | [unovue/shadcn-vue](https://github.com/unovue/shadcn-vue) |
+| [shadcn-vue](skills/shadcn-vue) | Vue port of shadcn-ui - beautiful, customizable, and extensible components | [unovue/shadcn-vue](https://github.com/unovue/shadcn-vue) |
 
 ## Usage
 
@@ -88,6 +88,28 @@ Then add the following to `AGENTS.md` (or `CLAUDE.md`) in your project root to e
 7. Ask your agent to `Generate skills for <project>` (recommended one at a time to manage token usage)
 
 See [AGENTS.md](AGENTS.md) for detailed generation guidelines.
+
+### shadcn-vue
+
+The shadcn-vue docs contain `component-preview` custom blocks that reference Vue SFC demo files. Use the following prompt to generate skills:
+
+```
+Generate skills for shadcn-vue
+
+Docs path: apps/v4/content/docs
+
+The docs use a custom `::component-preview` block with `name` (required) and
+`description` (optional) fields. When you encounter one, read the corresponding
+Vue SFC from `apps/v4/components/demo/<name>.vue` and treat it as the block's
+content. Example:
+
+::component-preview
+---
+name: SonnerDemo
+description: A sonner toast component.
+---
+::
+```
 
 ## Credits
 
