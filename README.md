@@ -8,7 +8,7 @@ Install using the `skills` CLI with the all skills:
 
 ```bash
 npx skills add ycs77/skills --skill='*'
-# Or to install all skills globally:
+# To install all skills globally:
 npx skills add ycs77/skills --skill='*' -g
 ```
 
@@ -32,7 +32,7 @@ npx skills add antfu/skills \
   --skill nuxt  # For Nuxt projects
 ```
 
-Then, to ensure your AI assistant loads the correct skills when working with Vue 3 Single File Components, add the following to `AGENTS.md` (or `CLAUDE.md`) in your project root:
+Then add the following to `AGENTS.md` (or `CLAUDE.md`) in your project root to ensure the AI assistant loads the correct skills when working with Vue 3 SFCs:
 
 **For Vue 3 frontend projects:**
 
