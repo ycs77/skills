@@ -4,7 +4,7 @@ description: Generate concise Git commit messages in imperative mood. Analyzes s
 allowed-tools: Bash(git status:*), Bash(git diff:*)
 metadata:
   author: Lucas Yang
-  version: "2026.02.19"
+  version: "2026.04.05"
 ---
 
 # Git Commit Message Generator
@@ -22,7 +22,7 @@ Generate concise, descriptive Git commit messages in English.
 ## Format
 
 - Imperative mood, under 72 characters
-- Types:
+- When a change clearly fits a known type, prefix the message with that type:
   - **Add**: New features or files
   - **Update**: Enhancements to existing features
   - **Remove**: Delete files or features
@@ -33,13 +33,14 @@ Generate concise, descriptive Git commit messages in English.
   - **Refactor**: Code restructuring without behavior change
   - **Document**: Documentation updates
   - **Test**: Add or update tests
-  - **Chore**: Maintenance tasks (deps, config, CI)
+- When no type fits naturally, write a plain descriptive message without any type prefix. The goal is a clear, natural commit message — never force a type.
 
 ## Handling Complex Changes
 
 When multiple types of changes exist in a single commit:
 - Choose the type that represents the **primary intent** of the change
-- Priority order (when uncertain): Add > Fix > Update > Refactor > Chore
+- Priority order (when uncertain): Add > Fix > Update > Refactor
+- If no type fits well, skip the type prefix entirely
 - If truly mixed and unrelated, suggest the user split into separate commits
 - Describe the most significant change; omit minor ancillary modifications
 
@@ -56,7 +57,8 @@ Optimize database queries for faster loading
 Refactor user service to use repository pattern
 Document API endpoints in README
 Test payment processing edge cases
-Chore: upgrade dependencies to latest versions
+Bump dependencies
 Add login page with validation and error handling
+Migrate CI pipeline from Travis to GitHub Actions
 Fix authentication bug and update related tests
 ```
