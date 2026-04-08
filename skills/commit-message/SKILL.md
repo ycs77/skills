@@ -1,10 +1,10 @@
 ---
 name: commit-message
-description: Generate concise Git commit messages in imperative mood. Analyzes staged changes first; if none, examines unstaged and untracked files. Use when the user asks to create, write, draft, make, or generate a commit message.
+description: Generate concise Git commit messages in imperative mood. Use when the user asks to create, write, draft, make, generate, or suggest a commit message, or when they say "commit these changes", "what should I commit?", or ask for help with git commit.
 allowed-tools: Bash(git status:*), Bash(git diff:*)
 metadata:
   author: Lucas Yang
-  version: "2026.04.05"
+  version: "2026.04.08"
 ---
 
 # Git Commit Message Generator
@@ -13,36 +13,21 @@ Generate concise, descriptive Git commit messages in English.
 
 ## Process
 
-1. Run `git diff --cached` (not `git -C <path> diff --cached`, not `cd <path> && git diff --cached`) to check for staged changes
+1. Run `git diff --cached` directly (NOT `git -C <path> diff --cached`, NOT `cd <path> && git diff --cached`) to check for staged changes
 2. If staged changes exist: generate commit message based on staged changes only
-3. If no staged changes: run `git diff` (not `git -C <path> diff`, not `cd <path> && git diff`) and `git status` (not `git -C <path> status`, not `cd <path> && git status`) to view unstaged and untracked files
+3. If no staged changes: run `git diff` directly (NOT `git -C <path> diff`, NOT `cd <path> && git diff`) and `git status` directly (NOT `git -C <path> status`, NOT `cd <path> && git status`) to view unstaged and untracked files
 4. For untracked files, intelligently assess which need content review (code/config files) vs which can be inferred from filename (assets, dependencies)
-5. Generate a single-line commit message (output ONLY the message, no follow-up questions)
+5. Generate a single-line commit message
+
+## Output
+
+Output ONLY the commit message — a single line, no explanation, no follow-up questions, no code block fencing.
 
 ## Format
 
 - Imperative mood, under 72 characters
-- When a change clearly fits a known type, prefix the message with that type:
-  - **Add**: New features or files
-  - **Update**: Enhancements to existing features
-  - **Remove**: Delete files or features
-  - **Rename**: Rename files or variables
-  - **Fix**: Bug fixes
-  - **Improve**: General improvements
-  - **Optimize**: Performance improvements
-  - **Refactor**: Code restructuring without behavior change
-  - **Document**: Documentation updates
-  - **Test**: Add or update tests
-- When no type fits naturally, write a plain descriptive message without any type prefix. The goal is a clear, natural commit message — never force a type.
-
-## Handling Complex Changes
-
-When multiple types of changes exist in a single commit:
-- Choose the type that represents the **primary intent** of the change
-- Priority order (when uncertain): Add > Fix > Update > Refactor
-- If no type fits well, skip the type prefix entirely
-- If truly mixed and unrelated, suggest the user split into separate commits
-- Describe the most significant change; omit minor ancillary modifications
+- Focus on the 'what' and 'why' of the change, not the 'how'. Avoid generic messages like 'update code' or 'fix bug'.
+- No type prefix (e.g., `feat:`, `fix:`) unless the user explicitly requests Conventional Commits format
 
 ## Examples
 
@@ -56,7 +41,7 @@ Improve error handling in payment module
 Optimize database queries for faster loading
 Refactor user service to use repository pattern
 Document API endpoints in README
-Test payment processing edge cases
+Add edge case tests for payment processing
 Bump dependencies
 Add login page with validation and error handling
 Migrate CI pipeline from Travis to GitHub Actions
