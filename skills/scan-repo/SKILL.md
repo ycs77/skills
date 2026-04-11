@@ -239,48 +239,48 @@ gh api repos/{owner}/{repo}/contributors --jq '.[].login' | head -10
 掃描完成後，輸出以下格式的報告：
 
 ```
-## Repo Scan 報告：{repo_name}
+## 🔍 Repo Scan 報告：{repo_name}
 
-### 專案概覽
+### 📦 專案概覽
 （Phase 1 的表格）
 
-### 依賴分析
+### 📋 依賴分析
 （Phase 2 的發現，列出可疑依賴）
 
-### 靜態弱點
+### 🛡️ 靜態弱點
 （Phase 3 的發現，依嚴重程度排序）
 
 每個弱點格式：
 #### 弱點 N：{類別} — `{file}:{line}`
-- **嚴重程度**：High / Medium / Low
+- **嚴重程度**：🔴 High / 🟡 Medium / 🟢 Low
 - **說明**：具體描述問題
 - **利用場景**：攻擊者如何利用
 - **建議**：如何修復
 
-### 供應鏈風險
+### ⛓️ 供應鏈風險
 （Phase 4 的發現）
 
-### Issues 安全回報
+### 🐛 Issues 安全回報
 （Phase 5 的表格 + 分析）
 （如跳過，註明「gh CLI 不可用，已跳過」）
 
-### 專案健康度
+### 🏥 專案健康度
 （Phase 6 的評估）
 
 ---
 
-### 風險總結
+### 📊 風險總結
 
 | 維度 | 風險等級 | 說明 |
 |------|---------|------|
-| 程式碼安全 | High/Medium/Low/None | |
-| 依賴風險 | High/Medium/Low/None | |
-| 供應鏈風險 | High/Medium/Low/None | |
-| 已知漏洞 | High/Medium/Low/None | |
-| 維護狀態 | High/Medium/Low/None | |
+| 程式碼安全 | 🔴 High / 🟡 Medium / 🟢 Low / ✅ None | |
+| 依賴風險 | 🔴 High / 🟡 Medium / 🟢 Low / ✅ None | |
+| 供應鏈風險 | 🔴 High / 🟡 Medium / 🟢 Low / ✅ None | |
+| 已知漏洞 | 🔴 High / 🟡 Medium / 🟢 Low / ✅ None | |
+| 維護狀態 | 🔴 High / 🟡 Medium / 🟢 Low / ✅ None | |
 | **整體風險** | **綜合以上五個維度的最高風險等級** | |
 
-### 結論
+### 🏁 結論
 
 是否建議安裝/使用？（明確回答）
 - 已知風險摘要（最多 3 點）
@@ -291,9 +291,9 @@ gh api repos/{owner}/{repo}/contributors --jq '.[].login' | head -10
 
 ## 嚴重程度定義
 
-- **High**：可直接利用，導致 RCE、資料外洩、權限提升
-- **Medium**：需特定條件才能利用，但影響範圍大
-- **Low**：防禦縱深問題，或影響範圍小
+- 🔴 **High**：可直接利用，導致 RCE、資料外洩、權限提升
+- 🟡 **Medium**：需特定條件才能利用，但影響範圍大
+- 🟢 **Low**：防禦縱深問題，或影響範圍小
 
 ---
 
