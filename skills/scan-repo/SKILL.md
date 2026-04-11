@@ -1,11 +1,11 @@
 ---
 name: scan-repo
-description: "GitHub 開源專案安全掃描工具。輸入 GitHub repo URL，輸出專案概覽、靜態弱點分析、供應鏈風險、Issues 安全回報、維護者評估與風險總結。適用於安裝前的安全評估。"
+description: "GitHub 開源專案安全掃描工具。當使用者貼上 GitHub URL、詢問某個套件或專案是否安全可信、想在安裝前評估風險，或提到「幫我看一下這個 repo」、「這個專案安不安全」、「我想用這個開源套件」、「這個工具可以信任嗎」時，務必使用此 skill。輸出專案概覽、靜態弱點分析、供應鏈風險、Issues 安全回報、維護者評估與風險總結。"
 metadata:
   version: "2026.04.12"
 ---
 
-# Repo Scan — GitHub 開源專案安全掃描
+# Scan Repo — GitHub 開源專案安全掃描
 
 ## 使用方式
 
@@ -23,7 +23,7 @@ metadata:
 1. **GitHub repo URL** 為必要參數。如果使用者沒有提供，直接詢問，不要猜測。
 2. URL 清理：移除 `?fbclid=`、`?ref=` 等追蹤參數，保留 `https://github.com/owner/repo` 格式。
 3. 前置檢查通過後才開始掃描流程。
-4. 掃描完成後清理：刪除 clone 到 `/tmp/` 的 repo。
+4. 掃描完成後清理：無論掃描是否成功，都必須刪除 clone 的 repo（見下方路徑說明）。
 
 ---
 
@@ -48,11 +48,20 @@ gh auth status
 
 ### Phase 1：專案概覽
 
-Clone repo 到 `/tmp/scan-repo-{repo_name}`（shallow clone 節省時間）：
+依作業系統決定 clone 路徑：
+
+- **Linux / macOS**：`/tmp/scan-repo-{repo_name}`
+- **Windows**：`$env:TEMP\scan-repo-{repo_name}`（PowerShell）或 `%TEMP%\scan-repo-{repo_name}`（CMD）
 
 ```bash
+# Linux/macOS
 git clone --depth 50 {repo_url} /tmp/scan-repo-{repo_name}
+
+# Windows (PowerShell)
+git clone --depth 50 {repo_url} "$env:TEMP\scan-repo-{repo_name}"
 ```
+
+> **注意**：`--depth 50` 適合大多數情況。若 Phase 6 需要評估更長期的 commit 活動，可改為 `--depth 200`。若 repo 歷史特別短，shallow clone 不影響結果。
 
 分析並整理：
 
@@ -95,7 +104,11 @@ git clone --depth 50 {repo_url} /tmp/scan-repo-{repo_name}
 
 ### Phase 3：靜態弱點掃描
 
-逐一讀取所有原始碼檔案，檢查以下類別：
+優先掃描以下目錄（按風險高低排序）：`src/`、`lib/`、`bin/`、`scripts/`、根目錄的 `.js`/`.py`/`.sh`/`.ts` 檔案。
+
+排除以下目錄與檔案（不掃描）：`node_modules/`、`.git/`、`dist/`、`build/`、`vendor/`、`__pycache__/`，以及大於 1MB 的單一檔案。
+
+對每個符合條件的原始碼檔案，檢查以下類別：
 
 #### 3.1 命令注入（Command Injection）
 - `exec()`、`execSync()`、`spawn()` 使用未過濾的外部輸入
@@ -162,6 +175,13 @@ git clone --depth 50 {repo_url} /tmp/scan-repo-{repo_name}
 - [ ] 是否有可疑的 outbound 網路連線（telemetry、data exfiltration）
 - [ ] 安裝時是否覆蓋現有檔案而不確認
 
+#### GitHub Actions 額外檢查（`.github/workflows/`）
+
+- [ ] 是否使用 unpinned action（`uses: actions/checkout@main` 而非固定版本如 `@v4`）—— 可被供應鏈攻擊替換
+- [ ] 是否有 `pull_request_target` 搭配 checkout 或執行任意程式碼（高風險：外部 PR 可觸發）
+- [ ] workflow 是否將 secrets 或敏感變數輸出到 log（`echo $SECRET`、`run: env`）
+- [ ] 是否使用第三方 action 且未鎖定 commit SHA（建議格式：`uses: org/action@{full-sha}`）
+
 ---
 
 ### Phase 5：Issues 安全回報掃描
@@ -169,11 +189,8 @@ git clone --depth 50 {repo_url} /tmp/scan-repo-{repo_name}
 > 需要 `gh` CLI。無法使用時跳過此階段並註明。
 
 ```bash
-# 抓所有 issues（open + closed）
-gh issue list -R {owner}/{repo} --state all --limit 200
-
-# 用關鍵字篩選安全相關 issues
-gh issue list -R {owner}/{repo} --state all --search "vulnerability OR security OR CVE OR injection OR XSS OR RCE OR exploit OR malicious OR unsafe OR leak OR bypass OR SSRF OR traversal"
+# 用關鍵字篩選安全相關 issues（含 open + closed）
+gh issue list -R {owner}/{repo} --state all --limit 200 --search "vulnerability OR security OR CVE OR injection OR XSS OR RCE OR exploit OR malicious OR unsafe OR leak OR bypass OR SSRF OR traversal"
 ```
 
 對每個命中的 issue：
@@ -261,7 +278,7 @@ gh api repos/{owner}/{repo}/contributors --jq '.[].login' | head -10
 | 供應鏈風險 | High/Medium/Low/None | |
 | 已知漏洞 | High/Medium/Low/None | |
 | 維護狀態 | High/Medium/Low/None | |
-| **整體風險** | **X** | |
+| **整體風險** | **綜合以上五個維度的最高風險等級** | |
 
 ### 結論
 
@@ -286,5 +303,5 @@ gh api repos/{owner}/{repo}/contributors --jq '.[].login' | head -10
 - 信心不足 70% 的發現不列入報告
 - 每個發現都要附具體檔案和行號
 - 報告以繁體中文輸出
-- 掃描完成後刪除 `/tmp/` 下的 clone
+- 掃描完成後刪除 clone（Linux/macOS: `/tmp/scan-repo-{repo_name}`，Windows: `%TEMP%\scan-repo-{repo_name}`），無論掃描是否成功都要清理
 - 此為靜態分析，不執行任何程式碼

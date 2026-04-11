@@ -19,14 +19,9 @@ npx skills add ycs77/skills --skill='*' -g
 | Name | Description |
 |------|-------------|
 | [commit-message](./skills/commit-message/SKILL.md) | Generate concise Git commit messages |
-| [ycs77-vue](./skills/ycs77-vue/SKILL.md) | Lucas Yang's Vue 3 conventions |
-
-### Forked Skills
-
-| Name | Description |
-|------|-------------|
 | [scan-repo](./skills/scan-repo/SKILL.md) | Security scan of GitHub open source projects |
 | [scan-skill](./skills/scan-skill/SKILL.md) | Security auditing tool for scanning skills |
+| [ycs77-vue](./skills/ycs77-vue/SKILL.md) | Lucas Yang's Vue 3 conventions |
 
 ### Skills Generated from Official Documentation
 
