@@ -21,6 +21,7 @@ export const vendors: Record<string, VendorSkillMeta> = {}
  */
 export const manual = [
   'commit-message',
+  'github-release-notes',
   'ycs77-vue',
 
   // Fork skills from other sources
