@@ -1,3 +1,3 @@
 # Scan Skill
 
-> Forked from: https://github.com/Toolsai/Skills-Security-Check
+> Original repo: https://github.com/Toolsai/Skills-Security-Check
