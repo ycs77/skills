@@ -27,4 +27,5 @@ export const manual = [
   // Fork skills from other sources
   'scan-repo',
   'scan-skill',
+  'write',
 ]

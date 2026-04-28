@@ -22,6 +22,7 @@ npx skills add ycs77/skills --skill='*' -g
 | [github-release-notes](./skills/github-release-notes/SKILL.md) | Generate GitHub release notes following Keep a Changelog spec |
 | [scan-repo](./skills/scan-repo/SKILL.md) | Security scan of GitHub open source projects |
 | [scan-skill](./skills/scan-skill/SKILL.md) | Security auditing tool for scanning skills |
+| [write](./skills/write/SKILL.md) | 寫作 skill，用於撰寫技術文章或社群/群組貼文 |
 | [ycs77-vue](./skills/ycs77-vue/SKILL.md) | Lucas Yang's Vue 3 conventions |
 
 ### Skills Generated from Official Documentation
