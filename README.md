@@ -107,4 +107,4 @@ Lucas Yang (yangchenshin77@gmail.com)
 
 ## License
 
-[MIT License](LICENSE.md)
+[MIT License](LICENSE)

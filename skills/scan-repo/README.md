@@ -1,3 +1,7 @@
 # Repo Scan
 
 > Original repo: https://github.com/KerberosClaw/kc_ai_skills/tree/main/repo-scan
+
+## License
+
+[MIT License](LICENSE)
