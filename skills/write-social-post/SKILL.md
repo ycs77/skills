@@ -12,7 +12,8 @@ metadata:
 ## 前置：抓取文章內容
 
 - **如果使用者提供的是文章連結**（而不是已經貼好的內文），優先用 `uvx trafilatura` 抓取正文後再開始寫
-- 指令：`uvx trafilatura -u "<文章網址>" --output-format markdown`
+- 指令：`uvx trafilatura -u "<文章網址>" --recall --output-format markdown`
+- **注意**：增加 `--recall` 參數可大幅提高對現代網頁（如 Next.js/React）的抓取成功率。
 - 為什麼用這個而不是 WebFetch：WebFetch 會先用小模型把內容轉述一次，語氣、引述原句、次要細節容易在壓縮過程被洗掉，影響鋪陳事實跟引述的準確度
 - `trafilatura` 在本地直接抽正文（去掉 navbar、廣告、側邊欄）並轉成 markdown，主模型讀到的是第一手原文
 - 抓不到或網站擋爬蟲時再退回 WebFetch，並在貼文裡避免直接引述原句
