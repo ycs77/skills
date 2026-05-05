@@ -1,6 +1,7 @@
 ---
 name: write-social-post
 description: 撰寫社群/群組貼文的 skill。只要使用者有撰寫社群貼文的需求都應觸發，包含「整理成貼文」、「寫一段介紹」、「發到群組」、「分享一篇」、「整理成一段話」、「寫新聞摘要」、「發 Facebook／LINE／Threads 貼文」等。
+allowed-tools: Bash(uvx trafilatura:*)
 metadata:
   author: Lucas Yang
   version: "2026.05.05"
