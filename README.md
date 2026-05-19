@@ -35,6 +35,23 @@ Generated from official documentation and fine-tuned by Lucas.
 |-------|-------------|--------|
 | [shadcn-vue](skills/shadcn-vue) | Vue port of shadcn-ui - beautiful, customizable, and extensible components | [unovue/shadcn-vue](https://github.com/unovue/shadcn-vue) |
 
+### Vendored Skills
+
+Synced from external repositories that maintain their own skills.
+
+| Skill | Description | Source |
+|-------|-------------|--------|
+| [grill-me](skills/grill-me) | Interview the user relentlessly to stress-test a plan or design | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [grill-with-docs](skills/grill-with-docs) | Grill a plan against the domain model, updating docs and ADRs inline | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [tdd](skills/tdd) | Test-driven development with the red-green-refactor loop | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [diagnose](skills/diagnose) | Disciplined diagnosis loop for hard bugs and performance regressions | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [zoom-out](skills/zoom-out) | Zoom out for broader context and a higher-level map of the code | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [improve-codebase-architecture](skills/improve-codebase-architecture) | Find deepening opportunities to make a codebase more testable and AI-navigable | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [caveman](skills/caveman) | Ultra-compressed communication mode that cuts token usage ~75% | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [handoff](skills/handoff) | Compact the conversation into a handoff document for another agent | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [prototype](skills/prototype) | Build a throwaway prototype to flesh out a design before committing | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [write-a-skill](skills/write-a-skill) | Create new agent skills with proper structure and progressive disclosure | [mattpocock/skills](https://github.com/mattpocock/skills) |
+
 ## Usage
 
 ### Vue Projects

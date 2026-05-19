@@ -14,7 +14,23 @@ export const submodules = {
 /**
  * Already generated skills, sync with their `skills/` directory
  */
-export const vendors: Record<string, VendorSkillMeta> = {}
+export const vendors: Record<string, VendorSkillMeta> = {
+  mattpocock: {
+    source: 'https://github.com/mattpocock/skills',
+    skills: {
+      'engineering/grill-with-docs': 'grill-with-docs',
+      'engineering/tdd': 'tdd',
+      'engineering/diagnose': 'diagnose',
+      'engineering/zoom-out': 'zoom-out',
+      'engineering/improve-codebase-architecture': 'improve-codebase-architecture',
+      'engineering/prototype': 'prototype',
+      'productivity/grill-me': 'grill-me',
+      'productivity/caveman': 'caveman',
+      'productivity/handoff': 'handoff',
+      'productivity/write-a-skill': 'write-a-skill',
+    },
+  },
+}
 
 /**
  * Self-maintained skills with Lucas Yang's preferences/tastes/recommendations
