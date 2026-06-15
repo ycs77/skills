@@ -1,5 +1,5 @@
 # Sync Info
 
 - **Source:** `vendor/mattpocock/skills/productivity/handoff`
-- **Git SHA:** `67bce91c80cd1020a4f068ced32d0281656842ad`
-- **Synced:** 2026-05-19
+- **Git SHA:** `694fa30311e02c2639942308513555e61ee84a6f`
+- **Synced:** 2026-06-15
