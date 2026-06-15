@@ -3,11 +3,11 @@ name: shadcn-vue
 description: Component usage patterns for shadcn-vue — a Vue component distribution system built on Reka UI and Tailwind CSS. Covers component APIs, forms with VeeValidate/TanStack Form, data tables, sidebar, charts, theming, and custom registries.
 metadata:
   author: Lucas Yang
-  version: "2026.02.14"
+  version: "2026.06.15"
   source: Generated from https://github.com/unovue/shadcn-vue, scripts located at https://github.com/ycs77/skills
 ---
 
-> The skill is based on shadcn-vue (latest, Reka UI v2 + Tailwind CSS v4), generated at 2026-02-14.
+> The skill is based on shadcn-vue (latest, Reka UI v2 + Tailwind CSS v4), generated at 2026-06-15.
 
 shadcn-vue is a code distribution system for Vue components. Instead of installing a package, you copy component source code into your project for full control. Components are built on Reka UI (headless primitives) and styled with Tailwind CSS.
 

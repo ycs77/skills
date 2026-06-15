@@ -115,10 +115,10 @@ const table = useVueTable({
 
 Each feature requires: (1) importing the row model, (2) adding state ref, (3) configuring `useVueTable`.
 
-Use the `valueUpdater` utility from `@/lib/utils` for all state change handlers:
+Use the `valueUpdater` utility from `@/components/ui/table/utils` for all state change handlers:
 
 ```ts
-import { valueUpdater } from '@/lib/utils'
+import { valueUpdater } from '@/components/ui/table/utils'
 ```
 
 ### Pagination

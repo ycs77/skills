@@ -38,7 +38,7 @@ DatePicker is composed from `Popover`, `Calendar`, and `Button` components.
 <script setup lang="ts">
 import { ref } from 'vue'
 import { CalendarDate, type DateValue } from '@internationalized/date'
-import { Calendar as CalendarIcon } from 'lucide-vue-next'
+import { Calendar as CalendarIcon } from '@lucide/vue'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'

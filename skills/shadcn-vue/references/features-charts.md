@@ -42,7 +42,7 @@ Defines labels, icons, and colors for chart series:
 
 ```ts
 import type { ChartConfig } from '@/components/ui/chart'
-import { Monitor } from 'lucide-vue-next'
+import { Monitor } from '@lucide/vue'
 
 const chartConfig = {
   desktop: {

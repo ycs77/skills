@@ -1,5 +1,5 @@
 # Generation Info
 
 - **Source:** `sources/shadcn-vue`
-- **Git SHA:** `d0a938a17ff09b81fb27cb5a1482d08c82713e21`
-- **Generated:** 2026-02-14
+- **Git SHA:** `66eca793a27b0a80c8cc54a0801c962d0130c71b`
+- **Generated:** 2026-06-15

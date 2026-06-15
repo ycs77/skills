@@ -15,12 +15,23 @@ shadcn-vue is a code distribution system for Vue components built on Reka UI and
 npx shadcn-vue@latest init
 ```
 
-Options:
+Key options:
+- `-p, --preset <preset>` - Use a preset: `reka-vega`, `reka-nova`, `reka-maia`, `reka-lyra`, `reka-mira`, `reka-luma`, `reka-sera`
+- `-t, --template <template>` - Template: `nuxt`, `vite`, `astro`, `laravel`
+- `--style <style>` - Visual style: `vega`, `nova`, `maia`, `lyra`, `mira`, `luma`, `sera`
+- `--icon-library <lib>` - Icon library: `lucide`, `tabler`, `hugeicons`, `phosphor`, `remixicon`
 - `-b, --base-color <color>` - Base color: `neutral`, `gray`, `zinc`, `stone`, `slate`
 - `-y, --yes` - Skip confirmation (default: true)
 - `-f, --force` - Force overwrite existing config
 - `--css-variables` / `--no-css-variables` - Toggle CSS variable theming (default: true)
-- `--src-dir` / `--no-src-dir` - Toggle src directory usage
+- `--pointer` / `--no-pointer` - Enable pointer cursor for buttons
+- `--rtl` / `--no-rtl` - Enable RTL support
+- `--reinstall` - Re-install existing UI components
+
+`create` is an alias for `init`:
+```bash
+npx shadcn-vue@latest create
+```
 
 ### Add components
 
@@ -38,23 +49,75 @@ Add all components:
 npx shadcn-vue@latest add -a
 ```
 
-Add from a remote URL:
+Add from a remote URL or local path:
 ```bash
 npx shadcn-vue@latest add https://acme.com/registry/navbar.json
 ```
 
-Options:
-- `-o, --overwrite` - Overwrite existing files
-- `-p, --path <path>` - Custom install path
-- `-s, --silent` - Mute output
+Options: `-o` overwrite, `-p <path>` custom install path, `-s` silent.
+
+### Apply a preset
+
+```bash
+npx shadcn-vue@latest apply --preset nova
+```
+
+Applies a visual style preset to an existing project.
+
+### View registry items
+
+```bash
+npx shadcn-vue@latest view button card dialog
+npx shadcn-vue@latest view @acme/auth @v0/dashboard
+```
+
+Preview registry items before installing.
+
+### Search registries
+
+```bash
+npx shadcn-vue@latest search @shadcn-vue -q "button"
+npx shadcn-vue@latest search @shadcn-vue @v0 @acme
+```
+
+`list` is an alias for `search`.
+
+### Get component docs
+
+```bash
+npx shadcn-vue@latest docs button
+```
+
+Fetches documentation and API references for components.
+
+### Get project info
+
+```bash
+npx shadcn-vue@latest info
+npx shadcn-vue@latest info --json
+```
+
+Returns project config: framework, aliases, installed components, icon library, etc.
 
 ### Build registry
 
 ```bash
 npx shadcn-vue@latest build
+npx shadcn-vue@latest build --output ./public/registry
 ```
 
 Generates registry JSON files from `registry.json` into `public/r/`.
+
+### Migrate
+
+```bash
+npx shadcn-vue@latest migrate rtl
+npx shadcn-vue@latest migrate icons
+```
+
+Available migrations:
+- `rtl` — Transforms physical CSS to logical (e.g. `ml-4` → `ms-4`), adds `rtl:` variants
+- `icons` — Migrate components to a different icon library
 
 ## components.json
 
@@ -67,18 +130,21 @@ Configuration file for your project. Created by `npx shadcn-vue@latest init`.
   "typescript": true,
   "tailwind": {
     "config": "",
-    "css": "src/assets/index.css",
+    "css": "src/styles/globals.css",
     "baseColor": "neutral",
     "cssVariables": true,
     "prefix": ""
   },
   "aliases": {
     "components": "@/components",
+    "composables": "@/composables",
     "utils": "@/lib/utils",
     "ui": "@/components/ui",
-    "lib": "@/lib",
-    "composables": "@/composables"
-  }
+    "lib": "@/lib"
+  },
+  "iconLibrary": "lucide",
+  "pointer": false,
+  "rtl": false
 }
 ```
 
@@ -89,7 +155,9 @@ Key points:
 - `tailwind.cssVariables` cannot be changed after initialization
 - `aliases.ui` controls where UI components are installed
 - `aliases.lib` controls where utility functions (like `cn`) are placed
-- `aliases.composables` controls where composables (like `useToast`) are placed
+- `aliases.composables` controls where composables are placed
+- `pointer: false` — set to `true` to enable `cursor: pointer` on buttons
+- `rtl: false` — set to `true` to enable RTL support
 - Set `typescript: false` for JavaScript-only `.vue` components
 
 ## Utility Function
@@ -107,17 +175,10 @@ export function cn(...inputs: ClassValue[]) {
 
 ## valueUpdater Utility
 
-Used with TanStack Table to update Vue refs from updater functions:
+Used with TanStack Table to update Vue refs from updater functions. Moved to `@/components/ui/table/utils` (no longer in `@/lib/utils`):
 
 ```ts
-import type { Updater } from '@tanstack/vue-table'
-import type { Ref } from 'vue'
-
-export function valueUpdater<T extends Updater<any>>(updaterOrValue: T, ref: Ref) {
-  ref.value = typeof updaterOrValue === 'function'
-    ? updaterOrValue(ref.value)
-    : updaterOrValue
-}
+import { valueUpdater } from '@/components/ui/table/utils'
 ```
 
 <!--

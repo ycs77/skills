@@ -83,7 +83,7 @@ Combobox is built by combining the `Popover` and `Command` components.
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Check, ChevronsUpDown } from 'lucide-vue-next'
+import { Check, ChevronsUpDown } from '@lucide/vue'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import {
