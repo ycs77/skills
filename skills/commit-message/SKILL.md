@@ -4,7 +4,7 @@ description: Generate concise Git commit messages in imperative mood. Use when t
 allowed-tools: Bash(git status:*), Bash(git diff:*)
 metadata:
   author: Lucas Yang
-  version: "2026.04.08"
+  version: "2026.07.11"
 ---
 
 # Git Commit Message Generator
@@ -17,16 +17,17 @@ Generate concise, descriptive Git commit messages in English.
 2. If staged changes exist: generate commit message based on staged changes only
 3. If no staged changes: run `git diff` directly (NOT `git -C <path> diff`, NOT `cd <path> && git diff`) and `git status` directly (NOT `git -C <path> status`, NOT `cd <path> && git status`) to view unstaged and untracked files
 4. For untracked files, intelligently assess which need content review (code/config files) vs which can be inferred from filename (assets, dependencies)
-5. Generate a single-line commit message
+5. Combine the diff with the intent behind the change understood from the conversation context — why the change is being made, not just what lines moved
+6. Generate a single-line commit message that leads with that intent
 
 ## Output
 
-Output ONLY the commit message — a single line, no explanation, no follow-up questions, no code block fencing.
+Output ONLY the commit message — a single line, no explanation, no code block fencing.
 
 ## Format
 
 - Imperative mood, under 72 characters
-- Focus on the 'what' and 'why' of the change, not the 'how'. Avoid generic messages like 'update code' or 'fix bug'.
+- Lead with the 'why' (the intent), then the 'what' of the change — never the 'how'. Avoid generic messages like 'update code' or 'fix bug'.
 - No type prefix (e.g., `feat:`, `fix:`) unless the user explicitly requests Conventional Commits format
 
 ## Examples
