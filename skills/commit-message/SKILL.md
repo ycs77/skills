@@ -26,7 +26,7 @@ Output ONLY the commit message — a single line, no explanation, no code block 
 
 ## Format
 
-- Imperative mood, under 72 characters
+- In English, imperative mood, under 72 characters
 - Lead with the 'why' (the intent), then the 'what' of the change — never the 'how'. Avoid generic messages like 'update code' or 'fix bug'.
 - No type prefix (e.g., `feat:`, `fix:`) unless the user explicitly requests Conventional Commits format
 
@@ -34,17 +34,16 @@ Output ONLY the commit message — a single line, no explanation, no code block 
 
 ```
 Add user authentication with JWT tokens
+Add edge case tests for payment processing
+Add login page with validation and error handling
 Update navbar to include search functionality
 Remove deprecated API endpoints
 Rename userService to UserAccountService
 Fix null pointer exception in user service
+Fix authentication bug and update related tests
 Improve error handling in payment module
 Optimize database queries for faster loading
 Refactor user service to use repository pattern
-Document API endpoints in README
-Add edge case tests for payment processing
-Bump dependencies
-Add login page with validation and error handling
 Migrate CI pipeline from Travis to GitHub Actions
-Fix authentication bug and update related tests
+Bump dependencies
 ```
