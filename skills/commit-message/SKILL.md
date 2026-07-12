@@ -1,15 +1,15 @@
 ---
 name: commit-message
-description: Generate concise Git commit messages in imperative mood. Use when the user asks to create, write, draft, make, generate, or suggest a commit message, or when they say "commit these changes", "what should I commit?", or ask for help with git commit.
+description: Generate concise, intent-driven Git commit messages in imperative mood. Use when the user asks to create, write, draft, make, generate, or suggest a commit message, or when they say "commit these changes", "what should I commit?", or ask for help with git commit.
 allowed-tools: Bash(git status:*), Bash(git diff:*)
 metadata:
   author: Lucas Yang
-  version: "2026.07.11"
+  version: "2026.07.12"
 ---
 
 # Git Commit Message Generator
 
-Generate concise, descriptive Git commit messages in English.
+Generate concise, descriptive and intent-driven Git commit messages in English.
 
 ## Process
 
@@ -37,6 +37,7 @@ Add user authentication with JWT tokens
 Add edge case tests for payment processing
 Add login page with validation and error handling
 Update navbar to include search functionality
+Update README with new installation instructions
 Remove deprecated API endpoints
 Rename userService to UserAccountService
 Fix null pointer exception in user service
