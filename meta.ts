@@ -1,13 +1,14 @@
 export interface VendorSkillMeta {
   official?: boolean
   source: string
+  skillsPath?: string // Optional custom path to skills directory (default: 'skills')
   skills: Record<string, string> // sourceSkillName -> outputSkillName
 }
 
 /**
  * Repositories to clone as submodules and generate skills from source
  */
-export const submodules = {
+export const submodules: Record<string, string> = {
   //
 }
 
@@ -49,10 +50,8 @@ export const vendors: Record<string, VendorSkillMeta> = {
 export const manual = [
   'commit-message',
   'github-release-notes',
-  'write-social-post',
-  'ycs77-vue',
-
-  // Fork skills from other sources
   'scan-repo',
   'scan-skill',
+  'write-social-post',
+  'ycs77-vue',
 ]

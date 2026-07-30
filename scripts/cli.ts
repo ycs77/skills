@@ -32,12 +32,14 @@ function submoduleExists(path: string): boolean {
   return content.includes(`path = ${path}`)
 }
 
+const RE_SUBMODULE_PATH = /path\s*=\s*(.+)/g
+
 function getExistingSubmodulePaths(): string[] {
   const gitmodules = join(root, '.gitmodules')
   if (!existsSync(gitmodules))
     return []
   const content = readFileSync(gitmodules, 'utf-8')
-  const matches = content.matchAll(/path\s*=\s*(.+)/g)
+  const matches = content.matchAll(RE_SUBMODULE_PATH)
   return Array.from(matches, match => match[1].trim())
 }
 
@@ -62,6 +64,7 @@ interface Project {
 
 interface VendorConfig {
   source: string
+  skillsPath?: string // Optional custom path to skills directory (default: 'skills')
   skills: Record<string, string> // sourceSkillName -> outputSkillName
 }
 
@@ -185,7 +188,8 @@ async function syncSubmodules() {
   for (const [vendorName, config] of Object.entries(vendors)) {
     const vendorConfig = config as VendorConfig
     const vendorPath = join(root, 'vendor', vendorName)
-    const vendorSkillsPath = join(vendorPath, 'skills')
+    const skillsBasePath = vendorConfig.skillsPath || 'skills'
+    const vendorSkillsPath = join(vendorPath, skillsBasePath)
 
     if (!existsSync(vendorPath)) {
       p.log.warn(`Vendor submodule not found: ${vendorName}. Run init first.`)
@@ -193,7 +197,7 @@ async function syncSubmodules() {
     }
 
     if (!existsSync(vendorSkillsPath)) {
-      p.log.warn(`No skills directory in vendor/${vendorName}/skills/`)
+      p.log.warn(`No skills directory in vendor/${vendorName}/${skillsBasePath}/`)
       continue
     }
 
@@ -250,7 +254,7 @@ async function syncSubmodules() {
 
       const syncContent = `# Sync Info
 
-- **Source:** \`vendor/${vendorName}/skills/${sourceSkillName}\`
+- **Source:** \`vendor/${vendorName}/${skillsBasePath}/${sourceSkillName}\`
 - **Git SHA:** \`${sha}\`
 - **Synced:** ${date}
 `
