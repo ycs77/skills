@@ -1,5 +1,5 @@
 # Sync Info
 
 - **Source:** `vendor/mattpocock/skills/engineering/improve-codebase-architecture`
-- **Git SHA:** `694fa30311e02c2639942308513555e61ee84a6f`
-- **Synced:** 2026-06-15
+- **Git SHA:** `d574778f94cf620fcc8ce741584093bc650a61d3`
+- **Synced:** 2026-07-30
