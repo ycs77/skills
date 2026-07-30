@@ -31,16 +31,27 @@ Synced from external repositories that maintain their own skills.
 
 | Skill | Description | Source |
 |-------|-------------|--------|
-| [grill-me](skills/grill-me) | Interview the user relentlessly to stress-test a plan or design | [mattpocock/skills](https://github.com/mattpocock/skills) |
-| [grill-with-docs](skills/grill-with-docs) | Grill a plan against the domain model, updating docs and ADRs inline | [mattpocock/skills](https://github.com/mattpocock/skills) |
-| [tdd](skills/tdd) | Test-driven development with the red-green-refactor loop | [mattpocock/skills](https://github.com/mattpocock/skills) |
-| [diagnose](skills/diagnose) | Disciplined diagnosis loop for hard bugs and performance regressions | [mattpocock/skills](https://github.com/mattpocock/skills) |
-| [zoom-out](skills/zoom-out) | Zoom out for broader context and a higher-level map of the code | [mattpocock/skills](https://github.com/mattpocock/skills) |
-| [improve-codebase-architecture](skills/improve-codebase-architecture) | Find deepening opportunities to make a codebase more testable and AI-navigable | [mattpocock/skills](https://github.com/mattpocock/skills) |
-| [caveman](skills/caveman) | Ultra-compressed communication mode that cuts token usage ~75% | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [setup-matt-pocock-skills](skills/setup-matt-pocock-skills) | Configure a repository for Matt Pocock's engineering skills | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [ask-matt](skills/ask-matt) | Route a task to the appropriate Matt Pocock skill or workflow | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [grill-with-docs](skills/grill-with-docs) | Stress-test a plan while updating domain docs and ADRs | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [to-spec](skills/to-spec) | Turn the current conversation into an issue-tracker specification | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [to-tickets](skills/to-tickets) | Break a plan into dependency-aware tracer-bullet tickets | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [implement](skills/implement) | Implement work from a specification or set of tickets | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [tdd](skills/tdd) | Test-driven development with the red-green loop | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [code-review](skills/code-review) | Review changes against repository standards and the originating specification | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [wayfinder](skills/wayfinder) | Map and investigate work too large for one agent session | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [prototype](skills/prototype) | Build throwaway prototypes to answer design questions | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [research](skills/research) | Research questions from primary sources and capture the findings | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [improve-codebase-architecture](skills/improve-codebase-architecture) | Find deepening opportunities to improve codebase architecture | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [diagnosing-bugs](skills/diagnosing-bugs) | Diagnose hard bugs and performance regressions | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [triage](skills/triage) | Categorize, verify, and prepare issues or PRs for implementation | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [codebase-design](skills/codebase-design) | Design deep module interfaces for testability and AI navigability | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [domain-modeling](skills/domain-modeling) | Refine domain terminology and record architectural decisions | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [grill-me](skills/grill-me) | Interview the user relentlessly to sharpen a plan or design | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [handoff](skills/handoff) | Compact the conversation into a handoff document for another agent | [mattpocock/skills](https://github.com/mattpocock/skills) |
-| [prototype](skills/prototype) | Build a throwaway prototype to flesh out a design before committing | [mattpocock/skills](https://github.com/mattpocock/skills) |
-| [write-a-skill](skills/write-a-skill) | Create new agent skills with proper structure and progressive disclosure | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [teach](skills/teach) | Teach the user a new skill or concept within the workspace | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [writing-great-skills](skills/writing-great-skills) | Write predictable agent skills using proven principles and patterns | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [grilling](skills/grilling) | Run a structured interview to stress-test a plan or design | [mattpocock/skills](https://github.com/mattpocock/skills) |
 
 ## Usage
 
