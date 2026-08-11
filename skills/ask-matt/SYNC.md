@@ -1,5 +1,5 @@
 # Sync Info
 
 - **Source:** `vendor/mattpocock/skills/engineering/ask-matt`
-- **Git SHA:** `d574778f94cf620fcc8ce741584093bc650a61d3`
-- **Synced:** 2026-07-30
+- **Git SHA:** `6acc160e4e0cd062dbbbd7a1b26ae92855edf07e`
+- **Synced:** 2026-08-11

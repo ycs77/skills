@@ -174,15 +174,17 @@ async function initSubmodules(skipPrompt = false) {
 async function syncSubmodules() {
   const spinner = p.spinner()
 
-  // Update all submodules
-  spinner.start('Updating submodules...')
-  try {
-    exec('git submodule update --remote --merge')
-    spinner.stop('Submodules updated')
-  } catch (e) {
-    spinner.stop(`Failed to update submodules: ${e}`)
-    return
-  }
+  // NOTE: Manual updated skills
+  //
+  // // Update all submodules
+  // spinner.start('Updating submodules...')
+  // try {
+  //   exec('git submodule update --remote --merge')
+  //   spinner.stop('Submodules updated')
+  // } catch (e) {
+  //   spinner.stop(`Failed to update submodules: ${e}`)
+  //   return
+  // }
 
   // Sync Type 2 skills
   for (const [vendorName, config] of Object.entries(vendors)) {
