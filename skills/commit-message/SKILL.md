@@ -41,6 +41,7 @@ Clarify installation requirements in README
 Remove deprecated endpoints to simplify the API surface
 Rename userService to clarify account responsibilities
 Handle missing users during authentication
+Fix database deadlock when updating concurrent balances
 Preserve authentication behavior with regression tests
 Return actionable errors when payment processing fails
 Reduce page load time by batching database queries
