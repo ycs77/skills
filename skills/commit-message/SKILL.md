@@ -4,7 +4,7 @@ description: Generates concise, intent-driven Git commit messages in imperative 
 allowed-tools: Bash(git status:*), Bash(git diff:*)
 metadata:
   author: Lucas Yang
-  version: "2026.07.12"
+  version: "2026.08.20"
 ---
 
 # Git Commit Message Generator
@@ -13,9 +13,9 @@ Generate concise, descriptive and intent-driven Git commit messages in English.
 
 ## Process
 
-1. Run `git diff --cached` directly (NOT `git -C <path> diff --cached`, NOT `cd <path> && git diff --cached`) to check for staged changes
+1. Run `git diff --cached` directly to check for staged changes
 2. If staged changes exist: generate commit message based on staged changes only
-3. If no staged changes: run `git diff` directly (NOT `git -C <path> diff`, NOT `cd <path> && git diff`) and `git status` directly (NOT `git -C <path> status`, NOT `cd <path> && git status`) to view unstaged and untracked files
+3. If no staged changes: run `git diff` directly and `git status` directly to view unstaged and untracked files
 4. For untracked files, intelligently assess which need content review (code/config files) vs which can be inferred from filename (assets, dependencies)
 5. Combine the diff with the intent supported by the conversation context; do not invent motivation that is not evident
 6. Generate a single-line commit message that prioritizes known intent, then observable outcome, then the concrete change
