@@ -20,6 +20,7 @@ npx skills add ycs77/skills --skill='*' -g
 |------|-------------|
 | [commit-message](./skills/commit-message/SKILL.md) | Generate concise Git commit messages |
 | [github-release-notes](./skills/github-release-notes/SKILL.md) | Generate GitHub release notes following Keep a Changelog spec |
+| [no-verify](./skills/no-verify/SKILL.md) | Skip agent-run tests and browser verification; linting, typechecks, and formatting are allowed |
 | [scan-repo](./skills/scan-repo/SKILL.md) | Security scan of GitHub open source projects |
 | [scan-skill](./skills/scan-skill/SKILL.md) | Security auditing tool for scanning skills |
 | [write-social-post](./skills/write-social-post/SKILL.md) | Write strategic social media posts for articles, trends, news, or tech commentary |

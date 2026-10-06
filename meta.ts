@@ -53,6 +53,7 @@ export const vendors: Record<string, VendorSkillMeta> = {
 export const manual = [
   'commit-message',
   'github-release-notes',
+  'no-verify',
   'scan-repo',
   'scan-skill',
   'write-social-post',
