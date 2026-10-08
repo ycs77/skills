@@ -1,6 +1,7 @@
 ---
 name: scan-skill
 description: 當使用者想審查 AI Agent skill 目錄的安全風險時使用，例如「掃描 skill」、「安全審查」、「檢查技能安全性」、「scan skills」、「audit skill」、「check skill for risks」、「security audit skill」。遞迴掃描所有 SKILL.md 及相關程式碼，透過靜態 pattern 比對與 AI 語意分析，輸出含風險等級分類與改善建議的 Markdown 安全報告。
+disable-model-invocation: true
 metadata:
   version: "2026.04.12"
 ---
