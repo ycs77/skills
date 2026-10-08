@@ -34,6 +34,7 @@ export const vendors: Record<string, VendorSkillMeta> = {
       'engineering/diagnosing-bugs': 'diagnosing-bugs',
       'engineering/triage': 'triage',
       'engineering/wizard': 'wizard',
+      'engineering/implement-spec': 'implement-spec',
       'engineering/pr': 'pr',
       'engineering/codebase-design': 'codebase-design',
       'engineering/domain-modeling': 'domain-modeling',

@@ -38,6 +38,7 @@ Synced from external repositories that maintain their own skills.
 | [to-spec](skills/to-spec) | Turn the current conversation into an issue-tracker specification | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [to-tickets](skills/to-tickets) | Break a plan into dependency-aware tracer-bullet tickets | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [implement](skills/implement) | Implement work from a specification or set of tickets | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [implement-spec](skills/implement-spec) | Implement a spec's tickets on an integration branch with parallel subagents | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [tdd](skills/tdd) | Test-driven development with the red-green loop | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [code-review](skills/code-review) | Review changes against repository standards and the originating specification | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [wayfinder](skills/wayfinder) | Map and investigate work too large for one agent session | [mattpocock/skills](https://github.com/mattpocock/skills) |
