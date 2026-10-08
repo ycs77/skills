@@ -50,9 +50,11 @@ Synced from external repositories that maintain their own skills.
 | [domain-modeling](skills/domain-modeling) | Refine domain terminology and record architectural decisions | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [grill-me](skills/grill-me) | Interview the user relentlessly to sharpen a plan or design | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [handoff](skills/handoff) | Compact the conversation into a handoff document for another agent | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [pr](skills/pr) | Write PR descriptions with change summaries, evidence, and merge risks | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [teach](skills/teach) | Teach the user a new skill or concept within the workspace | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [writing-great-skills](skills/writing-great-skills) | Write predictable agent skills using proven principles and patterns | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [grilling](skills/grilling) | Run a structured interview to stress-test a plan or design | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| [retro](skills/retro) | Review coding sessions to improve the agent's tools and guidance | [mattpocock/skills](https://github.com/mattpocock/skills) |
 
 ## Usage
 
