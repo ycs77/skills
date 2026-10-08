@@ -7,9 +7,9 @@
 Install using the `skills` CLI with the all skills:
 
 ```bash
-npx skills add ycs77/skills --skill='*'
+npx -y skills@latest add ycs77/skills -s '*'
 # To install all skills globally:
-npx skills add ycs77/skills --skill='*' -g
+npx -y skills@latest add ycs77/skills -s '*' -g
 ```
 
 ## Skills
