@@ -1,0 +1,55 @@
+{
+  "name": "ycs77",
+  "owner": {
+    "name": "Lucas Yang",
+    "url": "https://github.com/ycs77"
+  },
+  "plugins": [
+    {
+      "name": "ycs77-skills",
+      "source": "./",
+      "skills": [
+        "./skills/commit-message",
+        "./skills/github-release-notes",
+        "./skills/no-verify",
+        "./skills/scan-repo",
+        "./skills/scan-skill",
+        "./skills/write-social-post",
+        "./skills/ycs77-vue"
+      ]
+    },
+    {
+      "name": "mattpocock-skills",
+      "source": "./",
+      "skills": [
+        "./skills/setup-matt-pocock-skills",
+        "./skills/ask-matt",
+        "./skills/grill-with-docs",
+        "./skills/to-spec",
+        "./skills/to-tickets",
+        "./skills/implement",
+        "./skills/code-review",
+        "./skills/retro",
+        "./skills/wayfinder",
+        "./skills/prototype",
+        "./skills/research",
+        "./skills/improve-codebase-architecture",
+        "./skills/diagnosing-bugs",
+        "./skills/triage",
+        "./skills/wizard",
+        "./skills/implement-spec",
+        "./skills/pr",
+        "./skills/codebase-design",
+        "./skills/domain-modeling",
+        "./skills/tdd",
+        "./skills/grill-me",
+        "./skills/handoff",
+        "./skills/to-questionnaire",
+        "./skills/teach",
+        "./skills/wait-what",
+        "./skills/writing-for-agents",
+        "./skills/grilling"
+      ]
+    }
+  ]
+}
