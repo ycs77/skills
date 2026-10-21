@@ -57,34 +57,6 @@ Synced from external repositories that maintain their own skills.
 | [grilling](skills/grilling) | Run a structured interview to stress-test a plan or design | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [retro](skills/retro) | Review coding sessions to improve the agent's tools and guidance | [mattpocock/skills](https://github.com/mattpocock/skills) |
 
-## Usage
-
-### Vue Projects
-
-First, install the required skills:
-
-```bash
-npx skills add antfu/skills \
-  --skill vue \
-  --skill vue-best-practices \
-  --skill nuxt  # For Nuxt projects
-```
-
-Then add the following to `AGENTS.md` (or `CLAUDE.md`) in your project root to ensure the AI assistant loads the correct skills when working with Vue 3 SFCs:
-
-```md
-## Skills Activation Rules
-
-`ycs77-vue` is the project-level convention. When rules conflict, `ycs77-vue` takes precedence.
-
-- **When writing, modifying, or reviewing Vue 3 SFCs**, load ALL of the following skills:
-  1. `vue`
-  2. `vue-best-practices`
-  3. `ycs77-vue`
-```
-
-> For Nuxt projects, also include `nuxt` in the list above.
-
 ## Generate Skills
 
 1. Clone this repository
