@@ -15,7 +15,7 @@ Generate concise, descriptive and intent-driven Git commit messages in English.
 
 1. Run `git diff --cached` directly to check for staged changes
 2. If staged changes exist: generate commit message based on staged changes only
-3. If no staged changes: run `git diff` directly and `git status` directly to view unstaged and untracked files
+3. If no staged changes: run `git diff` directly to review unstaged changes and `git status --long` directly to list untracked paths
 4. For untracked files, intelligently assess which need content review (code/config files) vs which can be inferred from filename (assets, dependencies)
 5. Combine the diff with the intent supported by the conversation context; do not invent motivation that is not evident
 6. Generate a single-line commit message that prioritizes known intent, then observable outcome, then the concrete change
