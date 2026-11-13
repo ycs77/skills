@@ -50,6 +50,14 @@
         "./skills/writing-for-agents",
         "./skills/grilling"
       ]
+    },
+    {
+      "name": "pstack-skills",
+      "source": "./",
+      "skills": [
+        "./skills/create-verification-skill",
+        "./skills/maintain-verification-skill"
+      ]
     }
   ]
 }

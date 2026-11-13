@@ -48,6 +48,14 @@ export const vendors: Record<string, VendorSkillMeta> = {
       'productivity/grilling': 'grilling',
     },
   },
+  pstack: {
+    source: 'https://github.com/cursor/plugins',
+    skillsPath: 'pstack/skills',
+    skills: {
+      'create-verification-skill': 'create-verification-skill',
+      'maintain-verification-skill': 'maintain-verification-skill',
+    },
+  },
 }
 
 /**

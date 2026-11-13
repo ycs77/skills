@@ -209,7 +209,7 @@ async function syncSubmodules() {
       const outputPath = join(root, 'skills', outputSkillName)
 
       if (!existsSync(sourceSkillPath)) {
-        p.log.warn(`Skill not found: vendor/${vendorName}/skills/${sourceSkillName}`)
+        p.log.warn(`Skill not found: vendor/${vendorName}/${skillsBasePath}/${sourceSkillName}`)
         continue
       }
 
